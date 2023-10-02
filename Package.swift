@@ -7,7 +7,12 @@ let lib = "SnapshotTestingCli"
 
 let package = Package(
     name: "swift-snapshot-testing-cli",
-    platforms: [.macOS(.v13)],
+    platforms: [
+      .iOS(.v13),
+      .macOS(.v10_15),
+      .tvOS(.v13),
+      .watchOS(.v6),
+    ],
     products: [.library(name: lib, targets: [lib]),],
     dependencies: [
       .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.13.0")
