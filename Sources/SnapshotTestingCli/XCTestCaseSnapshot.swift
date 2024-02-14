@@ -7,10 +7,8 @@ import InlineSnapshotTesting
 open class XCTestCaseSnapshot: XCTestCase {
   open override class func setUp() {
     super.setUp()
-    SnapshotTesting.diffTool = "ksdiff"
-    InlineSnapshotTesting.diffTool = SnapshotTesting.diffTool
-    let isRecording = Bool(ProcessInfo.processInfo.environment["SNAPSHOT_TESTING_UPDATE_TESTS"] ?? "false") ?? false
-    SnapshotTesting.isRecording = isRecording
-    InlineSnapshotTesting.isRecording = isRecording
+    let envIsRecording = Bool(ProcessInfo.processInfo.environment["SNAPSHOT_TESTING_UPDATE_TESTS"] ?? "false") ?? false
+    isRecording = envIsRecording
+    diffTool = "ksdiff"
   }
 }
