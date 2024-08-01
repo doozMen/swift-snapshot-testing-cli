@@ -56,7 +56,7 @@
          <EnvironmentVariable
             key = "SNAPSHOT_TESTING_UPDATE_TESTS"
             value = "true"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
