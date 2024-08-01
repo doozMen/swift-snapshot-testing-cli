@@ -7,7 +7,7 @@ import InlineSnapshotTesting
 open class XCTestCaseSnapshot: XCTestCase {
   open override func invokeTest() {
     let envIsRecording = Bool(ProcessInfo.processInfo.environment["SNAPSHOT_TESTING_UPDATE_TESTS"] ?? "false") ?? false
-    withSnapshotTesting(record: envIsRecording ? .failed : .never) {
+    withSnapshotTesting(record: envIsRecording ? .failed : .missing) {
       super.invokeTest()
     }
   }
