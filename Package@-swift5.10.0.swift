@@ -1,8 +1,7 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
-
 
 let lib = "SnapshotTestingCli"
 
@@ -24,21 +23,11 @@ let package = Package(
       dependencies: [
         .product(name: "InlineSnapshotTesting", package: "swift-snapshot-testing"),
         .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
-      ],
-      swiftSettings: [
-        .swiftLanguageVersion(.v6),
-        .enableExperimentalFeature("StrictConcurrency")
-      ]
-    ),
+      ]),
     .testTarget(
-      name: "\(lib)SwifTestingTests",
+      name: "\(lib)Tests",
       dependencies: [
         .target(name: lib)
-      ],
-      swiftSettings: [
-        .swiftLanguageVersion(.v6),
-        .enableExperimentalFeature("StrictConcurrency")
-      ]
-    )
+      ])
   ]
 )
